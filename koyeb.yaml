@@ -1,0 +1,12 @@
+name: mmms-site
+services:
+  - name: web
+    type: web
+    routes:
+      - path: /
+    env:
+      - key: NODE_ENV
+        value: production
+    build:
+      builder: dockerfile
+      dockerfile: Dockerfile
