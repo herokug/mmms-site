@@ -35,7 +35,7 @@ export function BackgroundFX() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.20),transparent_32%,rgba(0,0,0,0.08))] dark:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.55),transparent_32%,rgba(0,0,0,0.70))]" />
 
       {/* Equalizer / recording vibe (subtle) */}
-      <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center pb-8 sm:pb-10">
+      <div className="absolute inset-x-0 bottom-0 z-10 hidden justify-center pb-8 sm:flex sm:pb-10">
         <div
           className="relative w-[96vw] max-w-6xl"
           style={{
