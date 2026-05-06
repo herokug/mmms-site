@@ -8,7 +8,6 @@ import { GlassCard } from "@/components/glass-card";
 import { Section } from "@/components/section";
 import { OriginalsSlider } from "@/components/originals-slider";
 import { YouTubeCard } from "@/components/youtube-card";
-import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 
 const fadeUp = {
@@ -243,7 +242,7 @@ export function HomeClient() {
             <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-black/5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src={assetPath("/assets/cover.jpeg")}
+                  src="/assets/cover.jpeg"
                   alt="Mathara Malli Music Studio cover"
                   fill
                   sizes="(max-width: 1024px) 100vw, 520px"

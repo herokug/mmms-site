@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { GlassCard } from "@/components/glass-card";
 import { PageShell } from "@/components/page-shell";
-import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -64,7 +63,7 @@ export default function AboutPage() {
           <GlassCard className="p-0 overflow-hidden">
             <div className="relative aspect-[4/3] w-full">
               <Image
-                src={assetPath("/assets/cover.jpeg")}
+                src="/assets/cover.jpeg"
                 alt="Studio cover"
                 fill
                 sizes="(max-width: 1024px) 100vw, 360px"
