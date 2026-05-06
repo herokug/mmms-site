@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { assetPath } from "@/lib/asset-path";
 
 export function StartupSplash() {
   const [visible, setVisible] = useState(true);
@@ -42,7 +43,7 @@ export function StartupSplash() {
               className="relative h-24 w-24 overflow-hidden rounded-full border border-black/75 bg-white/5 shadow-[0_0_0_1px_rgba(0,0,0,0.65)_inset,0_0_0_4px_rgba(0,0,0,0.38),0_0_22px_rgba(255,176,0,0.12),0_12px_42px_rgba(0,0,0,0.82)] sm:h-28 sm:w-28"
             >
               <Image
-                src="/assets/logo1.jpeg"
+                src={assetPath("/assets/logo1.jpeg")}
                 alt="Mathara Malli Music Studio"
                 fill
                 sizes="112px"

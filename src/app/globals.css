@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "UN Isiwara";
-  src: url("/fonts/UN-Isiwara.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "UN Ganganee";
-  src: url("/fonts/UN-Ganganee.ttf") format("truetype");
-  font-display: swap;
-}
-
 :root {
   --bg: #050505;
   --fg: #f3f3f3;
@@ -114,7 +102,8 @@ body {
 }
 
 .sinhala-tagline {
-  font-family: "UN Isiwara", "UN Ganganee", "Noto Sans Sinhala", sans-serif;
+  font-family: var(--font-sinhala-isiwara), var(--font-sinhala-ganganee),
+    "Noto Sans Sinhala", sans-serif;
   letter-spacing: 0.02em;
   line-height: 1.35;
   text-shadow: 0 0 16px rgba(255, 106, 0, 0.2);

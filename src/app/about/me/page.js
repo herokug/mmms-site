@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GlassCard } from "@/components/glass-card";
 import { PageShell } from "@/components/page-shell";
+import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -20,7 +21,7 @@ export default function AboutMePage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             <div className="relative h-28 w-28 overflow-hidden rounded-3xl border border-white/10 bg-white/5">
               <Image
-                src="/assets/profile.jpg"
+                src={assetPath("/assets/profile.jpg")}
                 alt="Studio owner profile"
                 fill
                 sizes="112px"

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/lib/site";
+import { assetPath } from "@/lib/asset-path";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -18,7 +19,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3">
           <span className="relative h-10 w-10 overflow-hidden rounded-full border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
             <Image
-              src="/assets/logo.jpeg"
+              src={assetPath("/assets/logo.jpeg")}
               alt={`${site.name} logo`}
               fill
               sizes="40px"
