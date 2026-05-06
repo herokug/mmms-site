@@ -104,7 +104,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {site.name}
           </div>
           <div className="hidden sm:block">
-            Built for Vercel • Next.js
+            Node • Next.js
           </div>
         </div>
       </div>
