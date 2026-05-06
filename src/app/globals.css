@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "UN Isiwara";
+  src: url("/fonts/UN-Isiwara.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UN Ganganee";
+  src: url("/fonts/UN-Ganganee.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #050505;
+  --fg: #f3f3f3;
+  --muted: rgba(243, 243, 243, 0.7);
+  --card: rgba(10, 10, 10, 0.55);
+  --card-border: rgba(255, 255, 255, 0.12);
+
+  /* Traditional orange accent (flame) */
+  --accent: #ff6a00;
+  --accent-2: #ffb000;
+  --accent-soft: rgba(255, 106, 0, 0.18);
+
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --bg: #fafafa;
+  --fg: #0a0a0a;
+  --muted: rgba(10, 10, 10, 0.6);
+  --card: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.08);
+
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection {
+  background: rgba(255, 106, 0, 0.3);
+}
+
+/* Smooth theme transitions (disabled by next-themes during switch) */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* Utility: glass card look */
+.glass {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+@keyframes mmms-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Fluid highlight for studio name */
+.text-fluid {
+  background-image: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-2),
+    rgba(255, 255, 255, 0.85),
+    var(--accent)
+  );
+  background-size: 240% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: mmms-shimmer 5.5s ease-in-out infinite;
+  text-shadow: 0 0 22px rgba(255, 106, 0, 0.22);
+}
+
+@keyframes mmms-glow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.10))
+      drop-shadow(0 0 26px rgba(255, 176, 0, 0.06));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(255, 106, 0, 0.22))
+      drop-shadow(0 0 46px rgba(255, 176, 0, 0.12));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.10))
+      drop-shadow(0 0 26px rgba(255, 176, 0, 0.06));
+  }
+}
+
+.text-fluid-glow {
+  animation: mmms-shimmer 5.5s ease-in-out infinite, mmms-glow 3.6s ease-in-out
+      infinite;
+}
+
+.sinhala-tagline {
+  font-family: "UN Isiwara", "UN Ganganee", "Noto Sans Sinhala", sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-shadow: 0 0 16px rgba(255, 106, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-fluid,
+  .text-fluid-glow {
+    animation: none !important;
+  }
 }
